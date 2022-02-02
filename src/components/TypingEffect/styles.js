@@ -7,32 +7,31 @@ const TypingEffect = keyframes`
 `;
 
 const blink_caret = keyframes`
-    from, to { border-color: transparent }
-    50% { border-color: #E89E43; }
+    0%{
+        border-color: transparent;
+    }
+    50%{
+        border-color:inherit;
+    }
+    100%{
+        border-color:transparent;
+    }
 `;
 
 export const TypingStyled = styled.div`
+    border-color:${(props) => props.theme.highlight || '#8955d8'};
+
     h1{
-        width:fit-content;
-        max-width:fit-content;
+        width:0;
+        white-space: nowrap;
+        overflow:hidden;
 
         font-family: 'Share Tech Mono', monospace;
-        font-size:48px;
         
-        border-right: .15em solid #E89E43;
+        border-right: .15em solid ${(props) => props.theme.highlight || '#8955d8'};
 
-        animation: ${blink_caret} .75s step-end infinite;
-    }
-
-    @media(min-width:900px){
-        h1{
-            width:0;
-            white-space: nowrap;
-            overflow:hidden;
-
-            animation:
-            ${TypingEffect} 3.5s steps(40, end) forwards,
+        animation:
+            ${TypingEffect} 3.5s steps(50, end) forwards,
             ${blink_caret} .75s step-end infinite;
-        }
     }
 `; 

@@ -4,6 +4,7 @@ import {
     PresentationLeft,
     PresentationRight,
     Circle,
+    ReboundCircle,
     Technologies,
     TechPart,
     TechLanguages,
@@ -12,9 +13,11 @@ import {
 import RoundedImage from "../../components/RoundedImage/RoundedImage";
 import { TypingEffect } from "../../components/TypingEffect/TypingEffect";
 import { CustomSwiper } from "../../components/CustomSwiper/Swiper";
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { CurveText } from "../../components/CurveText/CurveText";
 
 // Import Images
-import DaviLacerda from "../../assets/DaviLacerda.jpeg";
+import DaviLacerda from "../../assets/DaviLacerda.png";
 
 export function Home() {
     return (
@@ -29,9 +32,15 @@ export function Home() {
                     <RoundedImage src={DaviLacerda} alt="Davi Lacerda" zIndex="1" />
                     <Circle />
                 </PresentationRight>
+                <a href="#tech" className="arrowDown">
+                    <ArrowDownwardIcon/>
+                </a>
+                <CurveText />
+                
             </Presentation>
 
-            <Technologies>
+            <Technologies id="tech">
+                <ReboundCircle />
                 <TechPart>
                     <div className="content border">
                         <h2>About Me</h2>
@@ -69,6 +78,8 @@ export function Home() {
                         <abbr title="Tailwind CSS"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png" alt="Tailwind CSS" /></abbr>
                     </div>
                 </TechLanguages>
+
+
             </Technologies>
 
             <SliderContainer>

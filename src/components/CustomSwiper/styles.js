@@ -1,7 +1,7 @@
 import styled, {keyframes} from "styled-components";
 
-const randonRGB = () => {
-    return Math.floor(Math.random() * (200 - 40) + 40);
+const randonHue = () => {
+    return `${(Math.floor(Math.random() * (40 - 0)) + 0)}deg`;
 };
 
 const iconAnimation = keyframes`
@@ -9,7 +9,7 @@ const iconAnimation = keyframes`
         transform:translateY(0px);
     }
     50%{
-        transform:translateY(-6px);
+        transform:translateY(-3px);
     }
     100%{
         transform:translateY(0px);
@@ -25,11 +25,11 @@ export const SwiperContainer = styled.div`
 
     .swiper {
         width: 75%;
-        height: 600px;
+        height: 250px;
 
         @media(min-width:900px){
-            width:50%;
-            height:400px;
+            width:30%;
+            height:200px;
         }
     }
 
@@ -40,7 +40,7 @@ export const SwiperContainer = styled.div`
         align-items: flex-start;
         justify-content: space-evenly;
         flex-direction: column;
-        gap: 5%;
+        gap: 10px;
 
         padding: 16px;
         border-radius: 18px;
@@ -50,8 +50,32 @@ export const SwiperContainer = styled.div`
         }
 
         a {
+            position:relative;
             color: inherit;
             text-decoration: none;
+
+            &:hover{
+                cursor:pointer;
+                &:after{
+                    width:100%;
+                }
+            }
+        
+            &:after{
+                content: "";
+                position: absolute; 
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            
+                display: block;
+                height: 2px;
+                width: 0;
+                
+                background: ${(props) => props.theme.color || "#e89e43"};
+                transition: width .3s ease;
+            }
         }
 
         .slider__left {
@@ -65,7 +89,7 @@ export const SwiperContainer = styled.div`
                 flex-direction: column;
                 flex-wrap: wrap;
                 place-content: flex-start center;
-                gap: 4px;
+                gap: 2px;
 
                 width: 100%;
 
@@ -74,7 +98,7 @@ export const SwiperContainer = styled.div`
                     place-content: center center;
                     gap:4px;
                     border-radius: 20px;
-                    padding: 8px;
+                    padding:2px;
 
                     &:before{
                         content:'•';
@@ -101,28 +125,34 @@ export const SwiperContainer = styled.div`
     }
 
     .swiper-slide-active{
-        .animationIcon{
-            animation: ${iconAnimation} .5s ease-in;
+        a:hover{
+            .animationIcon{
+                animation: ${iconAnimation} .5s ease-in;
+            }
         }
     }
 
+    .swiper-slide{
+        background-color: ${(props) => props.theme.highlight};
+    }
+
     .swiper-slide:nth-child(1n) {
-        background-color: ${`rgb(${randonRGB()}, ${randonRGB()}, ${randonRGB()})`};
+        filter:hue-rotate(${randonHue()});
     }
 
     .swiper-slide:nth-child(2n) {
-        background-color: ${`rgb(${randonRGB()}, ${randonRGB()}, ${randonRGB()})`};
+        filter:hue-rotate(${randonHue()});
     }
 
     .swiper-slide:nth-child(3n) {
-        background-color: ${`rgb(${randonRGB()}, ${randonRGB()}, ${randonRGB()})`};
+        filter:hue-rotate(${randonHue()});
     }
 
     .swiper-slide:nth-child(4n) {
-        background-color: ${`rgb(${randonRGB()}, ${randonRGB()}, ${randonRGB()})`};
+        filter:hue-rotate(${randonHue()});
     }
 
     .swiper-slide:nth-child(5n) {
-        background-color: ${`rgb(${randonRGB()}, ${randonRGB()}, ${randonRGB()})`};
+        filter:hue-rotate(${randonHue()});
     }
 `;

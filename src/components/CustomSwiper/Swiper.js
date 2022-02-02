@@ -42,29 +42,16 @@ export function CustomSwiper() {
                                 {repository.description && (
                                     <p>{repository.description}</p>
                                 )}
-                                {repository.topics.length ? (
-                                    <div className="topics">
-                                        <h3>Topics:</h3>
-                                        {repository.topics.map(
-                                            (topic, index) => {
-                                                return (
-                                                    <span key={index}>
-                                                        {topic}
-                                                    </span>
-                                                );
-                                            }
-                                        )}
-                                        {console.log(repository.topics)}
-                                    </div>
-                                ) : null}
-                            </div>
-                            <div className="slider__right">
                                 {repository.language && (
                                     <span>
                                         Most language used:{" "}
                                         {repository.language}
                                     </span>
                                 )}
+                            </div>
+                            
+                            <div className="slider__right">
+                                
                                 {repository.homepage && (
                                     <a
                                         href={repository.homepage}

@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const nightMode = {
     bg: "#0E0E10",
     color: "#efeff4",
-    highlight: "#E89E43",
+    highlight: "#8955d8",
 };
 
 export const lightMode = {
@@ -22,13 +22,14 @@ export const GlobalStyles = createGlobalStyle`
         word-break: break-word;
 
         scrollbar-width: auto;
-        scrollbar-color: #e89e43 ${(props) => props.theme.bg || "#0E0E10"};
+        scrollbar-color: ${(props) => props.theme.highlight} ${(props) => props.theme.bg || "#0E0E10"};
     }
 
     html,body{
         width:100%;
         background-color:${(props) => props.theme.bg || "#0E0E10"};
         color:${(props) => props.theme.color || "#EFEFF4"};
+        scroll-behavior: smooth;
     }
 
     #root{
@@ -48,7 +49,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     *::-webkit-scrollbar-thumb {
-        background-color: #e89e43;
+        background-color: ${(props) => props.theme.highlight};
         border-radius: 10px;
         border: 2px none ${(props) => props.theme.bg || "#0E0E10"};
     }
@@ -101,5 +102,14 @@ export const GlobalStyles = createGlobalStyle`
         position:fixed;
         top:1vh;
         right:1vw;
+        z-index:9999;
+
+        .MuiSwitch-thumb{
+            background-color:${(props) => props.theme.highlight};
+        }
+
+        .MuiSwitch-track{
+            background-color:${(props) => props.theme.highlight} !important;
+        }
     }
 `;
