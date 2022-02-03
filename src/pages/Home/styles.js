@@ -83,6 +83,13 @@ export const Presentation = styled.section`
         gap: 20vw;
     }
 
+    .handShake{
+        display:flex;
+        flex-direction:row;
+        place-content:center flex-start;
+        gap:12px;
+    }
+
     .arrowDown {
         position: absolute;
         bottom: 10vh;
@@ -145,7 +152,8 @@ export const ReboundCircle = styled.div`
     object-fit: contain;
 
     z-index: 0;
-    background-color: ${(props) => props.theme.highlight};
+
+    background-color: ${(props) => props.theme.floatCircle};
 
     animation: ${CircleRebounding} 24s infinite linear;
 
@@ -166,6 +174,9 @@ export const Technologies = styled.section`
     justify-content: flex-start;
     flex-direction: column;
     gap: 2vh;
+
+    color:${(props) => props.theme.color};
+    background-color:${(props) => props.theme.highlight};
 
     padding: 100px 32px 16px;
 
@@ -208,7 +219,7 @@ export const TechPart = styled.div`
         .border {
             padding-bottom: 5vw;
             border-bottom: 1px solid
-                ${(props) => props.theme.color || "#EFEFF4"};
+                ${(props) => props.theme.bg || "#EFEFF4"};
         }
     }
 

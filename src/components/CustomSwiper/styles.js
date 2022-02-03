@@ -1,7 +1,7 @@
 import styled, {keyframes} from "styled-components";
 
 const randonHue = () => {
-    return `${(Math.floor(Math.random() * (40 - 0)) + 0)}deg`;
+    return `${(Math.floor(Math.random() * (20 - 0)) + 0)}deg`;
 };
 
 const iconAnimation = keyframes`
@@ -24,11 +24,11 @@ export const SwiperContainer = styled.div`
     justify-content: center;
 
     .swiper {
-        width: 80%;
-        height: 220px;
+        width: 55%;
+        height: 280px;
 
         @media(min-width:900px){
-            width:50%;
+            width:35%;
             height:160px;
         }
     }
@@ -105,8 +105,8 @@ export const SwiperContainer = styled.div`
                 .miniCircle{
                     display:flex;
                     content:'';
-                    width:12px;
-                    height:12px;
+                    width:6px;
+                    height:6px;
                     border-radius:50%;
                     background-color:${(props) => props.theme.color};
                     align-self:center;
@@ -139,7 +139,7 @@ export const SwiperContainer = styled.div`
         .slider__right{
             display:flex;
             flex-direction:row;
-            place-content:center center;
+            place-content:center flex-start;
             gap:8px;
 
             width:100%;
@@ -154,6 +154,7 @@ export const SwiperContainer = styled.div`
             }
 
             @media(min-width:900px){
+                place-content:center center;
                 flex-direction:column;
                 width:20%;
             }

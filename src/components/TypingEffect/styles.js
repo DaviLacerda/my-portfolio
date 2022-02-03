@@ -2,8 +2,18 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 
 const TypingEffect = keyframes`
-    from { width: 0 }
-    to { width: 100% }
+    0%{
+        width: 0
+    }
+    25%{
+        width:100%;
+    }
+    75%{
+        width:100%;
+    }
+    100%{
+        width:0;
+    }
 `;
 
 const blink_caret = keyframes`
@@ -31,7 +41,7 @@ export const TypingStyled = styled.div`
         border-right: .15em solid ${(props) => props.theme.highlight || '#8955d8'};
 
         animation:
-            ${TypingEffect} 3.5s steps(50, end) forwards,
-            ${blink_caret} .75s step-end infinite;
+            ${TypingEffect} 16s steps(40, end) infinite,
+            ${blink_caret} 1s step-end infinite;
     }
 `; 

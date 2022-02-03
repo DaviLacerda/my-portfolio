@@ -3,13 +3,15 @@ import { createGlobalStyle } from "styled-components";
 export const nightMode = {
     bg: "#0E0E10",
     color: "#efeff4",
-    highlight: "#8955d8",
+    highlight: "#8257E5",
+    floatCircle: "#6d39e6",
 };
 
 export const lightMode = {
-    bg: "#efeff4",
+    bg: "#edf1f7",
     color: "#0E0E10",
-    highlight: "#91A6FF",
+    highlight: "#e5b657",
+    floatCircle: "#edc36d",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -21,8 +23,8 @@ export const GlobalStyles = createGlobalStyle`
         user-select:none;
         word-break: break-word;
 
-        scrollbar-width: auto;
-        scrollbar-color: ${(props) => props.theme.highlight} ${(props) => props.theme.bg || "#0E0E10"};
+        scrollbar-width: 0px;
+        scrollbar-color: transparent;
     }
 
     html,body{
@@ -41,17 +43,15 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-        width: 6px;
+        width: 0px;
     }
 
     *::-webkit-scrollbar-track {
-        background: ${(props) => props.theme.bg || "#0E0E10"};
+        background: transparent;
     }
 
     *::-webkit-scrollbar-thumb {
-        background-color: ${(props) => props.theme.highlight};
-        border-radius: 10px;
-        border: 2px none ${(props) => props.theme.bg || "#0E0E10"};
+        background-color: transparent;
     }
 
     h1,h2,h3,p,span{
@@ -71,27 +71,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size:20px;
 
         position:relative;
-        align-self:center;
-
-        &:hover{
-            &:after{
-                width:100%;
-            }
-        }
-
-        &:after{
-            content: "";
-            position: absolute; 
-            bottom: -4px;
-            left: 0;
-        
-            display: block;
-            height: 2px;
-            width: 0;
-            
-            background: ${(props) => props.theme.highlight || "#e89e43"};
-            transition: width .6s ease;
-        }
+        align-self:left;
 
         @media(min-width:900px){
             font-size:36px;
