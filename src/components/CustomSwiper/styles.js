@@ -24,12 +24,12 @@ export const SwiperContainer = styled.div`
     justify-content: center;
 
     .swiper {
-        width: 75%;
-        height: 250px;
+        width: 80%;
+        height: 220px;
 
         @media(min-width:900px){
-            width:30%;
-            height:200px;
+            width:50%;
+            height:160px;
         }
     }
 
@@ -37,13 +37,12 @@ export const SwiperContainer = styled.div`
         position: relative;
 
         display: flex;
-        align-items: flex-start;
-        justify-content: space-evenly;
+        place-content:center center;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
 
         padding: 16px;
-        border-radius: 18px;
+        border-radius: 4px;
 
         @media(min-width:900px){
             flex-direction:row;
@@ -84,6 +83,36 @@ export const SwiperContainer = styled.div`
             place-content:center center;
             gap:4px;
 
+            width:100%;
+
+            @media(min-width:900px){
+                width:80%;
+            }
+
+            .slider__left__title{
+                display:flex;
+                place-content:center flex-start;
+                flex-direction:row;
+                gap:4px;
+            }
+
+            .slider__left__language{
+                display:flex;
+                flex-direction:row;
+                place-content:center flex-start;
+                gap:4px;
+
+                .miniCircle{
+                    display:flex;
+                    content:'';
+                    width:12px;
+                    height:12px;
+                    border-radius:50%;
+                    background-color:${(props) => props.theme.color};
+                    align-self:center;
+                }
+            }
+
             .topics {
                 display: flex;
                 flex-direction: column;
@@ -109,9 +138,11 @@ export const SwiperContainer = styled.div`
 
         .slider__right{
             display:flex;
-            flex-direction:column;
-            place-content:flex-start center;
+            flex-direction:row;
+            place-content:center center;
             gap:8px;
+
+            width:100%;
 
             a{
                 display:flex;
@@ -120,6 +151,11 @@ export const SwiperContainer = styled.div`
                 gap:4px;
 
                 width:fit-content;
+            }
+
+            @media(min-width:900px){
+                flex-direction:column;
+                width:20%;
             }
         }
     }

@@ -4,6 +4,7 @@ import { SwiperContainer } from "./styles";
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CallMadeIcon from '@mui/icons-material/CallMade';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -38,15 +39,18 @@ export function CustomSwiper() {
                     return (
                         <SwiperSlide key={repository.id}>
                             <div className="slider__left">
-                                <h3>{repository.name}</h3>
+                                <div className="slider__left__title">
+                                    <BookmarksIcon />
+                                    <h3>{repository.name}</h3>
+                                </div>
                                 {repository.description && (
                                     <p>{repository.description}</p>
                                 )}
                                 {repository.language && (
-                                    <span>
-                                        Most language used:{" "}
-                                        {repository.language}
-                                    </span>
+                                    <div className="slider__left__language">
+                                        <span className="miniCircle"></span>
+                                        <p>{repository.language}</p>
+                                    </div>
                                 )}
                             </div>
                             

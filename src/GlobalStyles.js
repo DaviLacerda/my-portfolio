@@ -9,7 +9,7 @@ export const nightMode = {
 export const lightMode = {
     bg: "#efeff4",
     color: "#0E0E10",
-    highlight: "#E89E43",
+    highlight: "#91A6FF",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -99,7 +99,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .customSwitch{
-        position:fixed;
+        position:absolute;
         top:1vh;
         right:1vw;
         z-index:9999;
