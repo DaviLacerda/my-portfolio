@@ -64,7 +64,7 @@ export const GlobalStyles = createGlobalStyle`
 
     h1,h2,h3,p,span{
         width:fit-content;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Nunito', sans-serif;
     }
 
     h1{

@@ -178,7 +178,7 @@ export const TechPart = styled.div`
     @media (max-width: 900px) {
         .border {
             padding-bottom: 5vw;
-            border-bottom: 1px solid ${(props) => props.theme.bg || "#EFEFF4"};
+            border-bottom: 3px solid ${(props) => props.theme.color || "#EFEFF4"};
         }
     }
 
@@ -188,7 +188,7 @@ export const TechPart = styled.div`
 
         .border {
             padding-right: 5vw;
-            border-right: 1px solid ${(props) => props.theme.color || "#EFEFF4"};
+            border-right: 3px solid ${(props) => props.theme.color || "#EFEFF4"};
         }
     }
 `;
