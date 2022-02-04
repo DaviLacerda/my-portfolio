@@ -2,30 +2,16 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 
 const TypingEffect = keyframes`
-    0%{
-        width: 0
-    }
-    25%{
-        width:100%;
-    }
-    75%{
-        width:100%;
-    }
-    100%{
-        width:0;
-    }
+    0% { width: 0 }
+    25% { width:100% }
+    75% { width:100% }
+    100% { width:0 }
 `;
 
 const blink_caret = keyframes`
-    0%{
-        border-color: transparent;
-    }
-    50%{
-        border-color:inherit;
-    }
-    100%{
-        border-color:transparent;
-    }
+    0% { border-color: transparent }
+    50% { border-color:inherit }
+    100% { border-color:transparent }
 `;
 
 export const TypingStyled = styled.div`

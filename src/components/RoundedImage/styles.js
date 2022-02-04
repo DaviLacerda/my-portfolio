@@ -10,5 +10,5 @@ export const RoundedImg = styled.img`
     border-radius:50%;
     object-fit: contain;
 
-    z-index:${(props) => props.zIndex || '0'}
+    z-index:1;
 `;

@@ -39,6 +39,12 @@ export const GlobalStyles = createGlobalStyle`
         min-height:100vh;
     }
 
+    section{
+        width: 100%;
+        height: fit-content;
+        min-height: 100vh;
+    }
+
         /* ===== Scrollbar CSS ===== */
 
     /* Chrome, Edge, and Safari */
@@ -53,6 +59,8 @@ export const GlobalStyles = createGlobalStyle`
     *::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
+
+    /* Project font sizes */
 
     h1,h2,h3,p,span{
         width:fit-content;
@@ -70,9 +78,6 @@ export const GlobalStyles = createGlobalStyle`
     h2{
         font-size:20px;
 
-        position:relative;
-        align-self:left;
-
         @media(min-width:900px){
             font-size:36px;
         }
@@ -82,7 +87,7 @@ export const GlobalStyles = createGlobalStyle`
         position:absolute;
         top:1vh;
         right:1vw;
-        z-index:9999;
+        z-index:10;
 
         .MuiSwitch-thumb{
             background-color:${(props) => props.theme.highlight};

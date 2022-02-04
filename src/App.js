@@ -6,12 +6,13 @@ import { ThemeProvider } from "styled-components";
 import { nightMode, lightMode, GlobalStyles } from "./GlobalStyles";
 import { SwitchCustom } from "./components/SwitchCustom/SwitchCustom";
 
-function App() {
+export function App() {
     if (!localStorage.theme) {
         localStorage.setItem("theme", "lightMode");
     }
 
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("lightMode");
+
     const themeToggler = () => {
         if (theme === "lightMode") {
             window.localStorage.setItem("theme", "nightMode");
@@ -20,6 +21,7 @@ function App() {
             window.localStorage.setItem("theme", "lightMode");
             setTheme("lightMode");
         }
+        
     };
 
     useEffect(() => {
@@ -28,12 +30,10 @@ function App() {
     }, []);
 
     return (
-        <ThemeProvider theme={theme === "lightMode" ? nightMode : lightMode}>
+        <ThemeProvider theme={theme === "lightMode" ? lightMode : nightMode}>
             <SwitchCustom onClick={themeToggler} />
             <GlobalStyles />
             <RoutesSite />
         </ThemeProvider>
     );
 }
-
-export default App;

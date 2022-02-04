@@ -1,13 +1,7 @@
 // Import Components and Styled-Components
-import {
-    Presentation,
-    PresentationLeft,
-    PresentationRight,
-    Circle,
-    ReboundCircle,
-    Technologies,
-    TechPart,
-    TechLanguages,
+import {Presentation, PresentationLeft, PresentationRight,
+    Circle, ReboundCircle,
+    Technologies, TechPart, TechLanguages,
     SliderContainer,
 } from "./styles";
 import RoundedImage from "../../components/RoundedImage/RoundedImage";
@@ -21,25 +15,7 @@ import ScrollReveal from "scrollreveal";
 import DaviLacerda from "../../assets/DaviLacerda.jpeg";
 
 export function Home() {
-    ScrollReveal().reveal("#presentation", {
-        origin: "bottom",
-        delay: 600,
-        distance: "50px",
-    });
-
-    ScrollReveal().reveal("#techContent", {
-        origin: "bottom",
-        delay: 600,
-        distance: "50px",
-    });
-
-    ScrollReveal().reveal("#techLanguages", {
-        origin: "bottom",
-        delay: 600,
-        distance: "50px",
-    });
-
-    ScrollReveal().reveal("#projects", {
+    ScrollReveal().reveal("section", {
         origin: "bottom",
         delay: 600,
         distance: "50px",
@@ -47,7 +23,8 @@ export function Home() {
 
     return (
         <>
-            <Presentation id="presentation">
+            <Presentation>
+                <CurveText />
                 <PresentationLeft>
                     <TypingEffect>Davi Lacerda</TypingEffect>
                     <h2>Front End Developer</h2>
@@ -59,19 +36,17 @@ export function Home() {
                             `https://github.com/DaviLacerda.png` || DaviLacerda
                         }
                         alt="Davi Lacerda"
-                        zIndex="1"
                     />
                     <Circle />
                 </PresentationRight>
                 <a href="#tech" className="arrowDown">
                     <ArrowDownwardIcon />
                 </a>
-                <CurveText />
             </Presentation>
 
             <Technologies id="tech">
                 <ReboundCircle />
-                <TechPart id="techContent">
+                <TechPart>
                     <div className="content border">
                         <h2>About Me</h2>
                         <p>
@@ -100,7 +75,7 @@ export function Home() {
                     </div>
                 </TechPart>
 
-                <TechLanguages id="techLanguages">
+                <TechLanguages>
                     <h2>Languages and Tools</h2>
                     <div className="icons">
                         {/* html5 */}
@@ -162,7 +137,7 @@ export function Home() {
                 </TechLanguages>
             </Technologies>
 
-            <SliderContainer id="projects">
+            <SliderContainer>
                 <h2>My projects</h2>
                 <CustomSwiper></CustomSwiper>
             </SliderContainer>

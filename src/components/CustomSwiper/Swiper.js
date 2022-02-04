@@ -1,13 +1,9 @@
+// import swiper.js and styles
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCards } from "swiper";
+import { EffectFlip     } from "swiper";
 import { SwiperContainer } from "./styles";
-
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CallMadeIcon from '@mui/icons-material/CallMade';
-import BookmarksIcon from '@mui/icons-material/Bookmarks';
-
 import "swiper/css";
-import "swiper/css/effect-cards";
+import "swiper/css/effect-flip";
 
 // import axios and react hooks
 import axios from "axios";
@@ -15,6 +11,7 @@ import { useState, useEffect } from "react";
 
 export function CustomSwiper() {
     const [repos, setRepos] = useState([]);
+    const [colors, setColors] = useState([]);
 
     const getRepos = async () => {
         const res = await axios.get(
@@ -23,53 +20,33 @@ export function CustomSwiper() {
         setRepos(res.data);
     };
 
+    const getCardColors = () => {
+        const currentTheme = localStorage.theme;
+        currentTheme === 'lightMode' ? setColors(['e5b657','0E0E10']) : setColors(['8257E5','efeff4'])
+    }
+
     useEffect(() => {
         getRepos();
     }, []);
 
+    useEffect(() => {
+        getCardColors();
+    }, [localStorage.theme]);
+    
+
     return (
         <SwiperContainer>
             <Swiper
-                effect={"cards"}
+                effect={"flip"}
                 grabCursor={true}
-                modules={[EffectCards]}
-                className="mySwiper"
+                modules={[EffectFlip]}
             >
-                {repos.map((repository, index) => {
+                {repos.map((repository) => {
                     return (
                         <SwiperSlide key={repository.id}>
-                            <div className="slider__left">
-                                <div className="slider__left__title">
-                                    <BookmarksIcon />
-                                    <h3>{repository.name}</h3>
-                                </div>
-                                {repository.description && (
-                                    <p>{repository.description}</p>
-                                )}
-                                {repository.language && (
-                                    <div className="slider__left__language">
-                                        <span className="miniCircle"></span>
-                                        <p>{repository.language}</p>
-                                    </div>
-                                )}
-                            </div>
-                            
-                            <div className="slider__right">
-                                
-                                {repository.homepage && (
-                                    <a
-                                        href={repository.homepage}
-                                        target="_blank"
-                                    >
-                                        <p>Site</p>
-                                        <CallMadeIcon className="animationIcon"/>
-                                    </a>
-                                )}
-                                <a href={repository.html_url} target="_blank">
-                                    <p>Repository</p>
-                                    <GitHubIcon className="animationIcon"/>
-                                </a>
-                            </div>
+                            <a href={repository.html_url} target='_blank'>
+                                <img src={`https://github-readme-stats.vercel.app/api/pin/?username=davilacerda&repo=${repository.name}&bg_color=${colors[0]}&border_color=${colors[0]}&title_color=${colors[1]}&text_color=${colors[1]}`} alt={`GitHub ${repository.name} Stats Card`}/>
+                            </a>
                         </SwiperSlide>
                     );
                 })}

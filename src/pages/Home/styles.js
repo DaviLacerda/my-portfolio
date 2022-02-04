@@ -1,49 +1,25 @@
 import styled, { keyframes } from "styled-components";
 
-function randomPosition(max,min) {
-    return `${Math.floor(Math.random() * ((max - min) + min))}px`
+function randomPosition(max, min) {
+    return `${Math.floor(Math.random() * (max - min + min))}px`;
 }
 
 const floatArrow = keyframes`
-    0%{
-        transform:translateY(-16px);
-    }
-    50%{
-        transform:translateY(0px);
-    }
-    100%{
-        transform:translateY(-16px);
-    }
+    0% { transform:translateY(-16px) }
+    50% { transform:translateY(0px) }
+    100% { transform:translateY(-16px) }
 `;
 
 const floatCircle = keyframes`
-    0%{
-        transform:translateY(-40px) translateX(0px);
-    }
-    12.5%{
-        transform:translateY(-20px) translateX(20px);
-    }
-    25%{
-        transform:translateY(0px) translateX(40px);
-    }
-    37.5%{
-        transform:translateY(20px) translateX(20px);
-    }
-    50%{
-        transform:translateY(40px) translateX(0px);
-    }
-    62.5%{
-        transform:translateY(20px) translateX(20px);
-    }
-    75%{
-        transform:translateY(0px) translateX(40px);
-    }
-    87.5%{
-        transform:translateY(-20px) translateX(20px);
-    }
-    100%{
-        transform:translateY(-40px) translateX(0px);
-    }
+    0% { transform:translateY(-40px) translateX(0px) }
+    12.5% { transform:translateY(-20px) translateX(20px) }
+    25% { transform:translateY(0px) translateX(40px) }
+    37.5% { transform:translateY(20px) translateX(20px) }
+    50% { transform:translateY(40px) translateX(0px) }
+    62.5% { transform:translateY(20px) translateX(20px) }
+    75% { transform:translateY(0px) translateX(40px) }
+    87.5% { transform:translateY(-20px) translateX(20px) }
+    100% { transform:translateY(-40px) translateX(0px) }
 `;
 
 const CircleRebounding = keyframes`
@@ -66,29 +42,15 @@ const CircleRebounding = keyframes`
 `;
 
 export const Presentation = styled.section`
-    width: 100%;
-    height: fit-content;
-    min-height: 100vh;
-
+    position:relative;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 10vw;
-
+    
     padding: 16px;
-
-    @media (min-width: 900px) {
-        flex-direction: row;
-        gap: 20vw;
-    }
-
-    .handShake{
-        display:flex;
-        flex-direction:row;
-        place-content:center flex-start;
-        gap:12px;
-    }
 
     .arrowDown {
         position: absolute;
@@ -99,8 +61,9 @@ export const Presentation = styled.section`
         color: inherit;
     }
 
-    .curveText {
-        fill: #fff;
+    @media (min-width: 900px) {
+        flex-direction: row;
+        gap: 20vw;
     }
 `;
 
@@ -157,7 +120,7 @@ export const ReboundCircle = styled.div`
 
     animation: ${CircleRebounding} 24s infinite linear;
 
-    @media(min-width:900px){
+    @media (min-width: 900px) {
         width: 256px;
         height: 256px;
     }
@@ -165,9 +128,6 @@ export const ReboundCircle = styled.div`
 
 export const Technologies = styled.section`
     position: relative;
-    width: 100%;
-    height: fit-content;
-    min-height: 100vh;
 
     display: flex;
     align-items: flex-start;
@@ -175,8 +135,8 @@ export const Technologies = styled.section`
     flex-direction: column;
     gap: 2vh;
 
-    color:${(props) => props.theme.color};
-    background-color:${(props) => props.theme.highlight};
+    color: ${(props) => props.theme.color};
+    background-color: ${(props) => props.theme.highlight};
 
     padding: 100px 32px 16px;
 
@@ -218,8 +178,7 @@ export const TechPart = styled.div`
     @media (max-width: 900px) {
         .border {
             padding-bottom: 5vw;
-            border-bottom: 1px solid
-                ${(props) => props.theme.bg || "#EFEFF4"};
+            border-bottom: 1px solid ${(props) => props.theme.bg || "#EFEFF4"};
         }
     }
 
@@ -249,10 +208,9 @@ export const TechLanguages = styled.div`
         width: 100%;
 
         display: flex;
-        flex-direction: row;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
 
         img {
             width: 48px;
@@ -276,10 +234,6 @@ export const TechLanguages = styled.div`
 `;
 
 export const SliderContainer = styled.section`
-    width: 100%;
-    height: fit-content;
-    min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
