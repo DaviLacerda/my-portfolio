@@ -37,12 +37,14 @@ export const GlobalStyles = createGlobalStyle`
     #root{
         width:100%;
         min-height:100vh;
+        overflow-x:hidden;
     }
 
     section{
         width: 100%;
         height: fit-content;
         min-height: 100vh;
+        padding: 16px;
     }
 
         /* ===== Scrollbar CSS ===== */

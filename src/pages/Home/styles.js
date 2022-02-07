@@ -49,8 +49,6 @@ export const Presentation = styled.section`
     justify-content: center;
     flex-direction: column;
     gap: 10vw;
-    
-    padding: 16px;
 
     .arrowDown {
         position: absolute;
@@ -147,6 +145,7 @@ export const Technologies = styled.section`
 
 export const TechPart = styled.div`
     width: 100%;
+    height:fit-content;
 
     display: flex;
     flex-direction: column;
@@ -157,39 +156,25 @@ export const TechPart = styled.div`
 
     .content {
         width: fit-content;
+        height: fit-content;
 
         display: flex;
         flex-direction: column;
         gap: 3vh;
-
-        text-align: left;
     }
 
-    .border {
-        width: fit-content;
+    .tech__neonBar{
+        width:0;
 
-        display: flex;
-        flex-direction: column;
-        gap: 3vh;
-
-        text-align: left;
-    }
-
-    @media (max-width: 900px) {
-        .border {
-            padding-bottom: 5vw;
-            border-bottom: 3px solid ${(props) => props.theme.color || "#EFEFF4"};
+        @media(min-width:900px){
+            width:fit-content;
+            height:200px;
         }
     }
 
     @media (min-width: 900px) {
         flex-direction: row;
         gap: 3vw;
-
-        .border {
-            padding-right: 5vw;
-            border-right: 3px solid ${(props) => props.theme.color || "#EFEFF4"};
-        }
     }
 `;
 

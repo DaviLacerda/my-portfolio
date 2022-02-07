@@ -1,14 +1,4 @@
-import styled, {keyframes} from "styled-components";
-
-const randonHue = () => {
-    return `${(Math.floor(Math.random() * (20 - 0)) + 0)}deg`;
-};
-
-const iconAnimation = keyframes`
-    0% { transform:translateY(0px) }
-    50% { transform:translateY(-3px) }
-    100% { transform:translateY(0px) }
-`;
+import styled from "styled-components";
 
 export const SwiperContainer = styled.div`
     width: 100%;
@@ -18,19 +8,17 @@ export const SwiperContainer = styled.div`
     justify-content: center;
 
     .swiper {
+        position:relative;
+
         width: 90%;
         height: 280px;
 
         padding:8px;
 
         @media(min-width:900px){
-            width:35%;
+            width:50%;
             height:160px;
         }
-    }
-
-    .swiper-cards{
-        overflow: visible;
     }
 
     .swiper-slide{
@@ -49,5 +37,18 @@ export const SwiperContainer = styled.div`
 
     .swiper-slide-shadow{
         display:none;
+    }
+
+    .swiper-pagination{
+        bottom:-16px;
+    }
+
+    .swiper-pagination-bullet{
+        background-color: ${(props) => props.theme.color};
+        opacity:0.6;
+    }
+
+    .swiper-pagination-bullet-active{
+        background-color: ${(props) => props.theme.highlight};
     }
 `;

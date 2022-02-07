@@ -1,18 +1,27 @@
 // Import Components and Styled-Components
-import {Presentation, PresentationLeft, PresentationRight,
-    Circle, ReboundCircle,
-    Technologies, TechPart, TechLanguages,
+import {
+    Presentation,
+    PresentationLeft,
+    PresentationRight,
+    Circle,
+    ReboundCircle,
+    Technologies,
+    TechPart,
+    TechLanguages,
     SliderContainer,
 } from "./styles";
+
 import RoundedImage from "../../components/RoundedImage/RoundedImage";
 import { TypingEffect } from "../../components/TypingEffect/TypingEffect";
 import { CustomSwiper } from "../../components/CustomSwiper/Swiper";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { CurveText } from "../../components/CurveText/CurveText";
+import { Contact } from "../../components/Contact/Contact";
+import { NeonBar } from "../../components/NeonBar/NeonBar";
+import { Footer } from "../../components/Footer/Footer";
 import ScrollReveal from "scrollreveal";
 
-// Import Images
-import DaviLacerda from "../../assets/DaviLacerda.jpeg";
+// Import MUI Icons
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export function Home() {
     ScrollReveal().reveal("section", {
@@ -32,9 +41,7 @@ export function Home() {
 
                 <PresentationRight>
                     <RoundedImage
-                        src={
-                            `https://github.com/DaviLacerda.png` || DaviLacerda
-                        }
+                        src={`https://github.com/DaviLacerda.png`}
                         alt="Davi Lacerda"
                     />
                     <Circle />
@@ -47,16 +54,20 @@ export function Home() {
             <Technologies id="tech">
                 <ReboundCircle />
                 <TechPart>
-                    <div className="content border">
+                    <div className="content">
                         <h2>About Me</h2>
                         <p>
                             I started studying programming in March 2020 when I
                             joined the faculty of computer science at the
                             Federal University of Uberlândia (UFU). In may I had
                             my first contact with front end development, and
-                            since then I have decided that this is the area that
-                            I want to be able to contribute in technology.
+                            since then i have decided that this is the area that
+                            i want to be able to contribute in technology.
                         </p>
+                    </div>
+
+                    <div className="tech__neonBar">
+                        <NeonBar />
                     </div>
 
                     <div className="content">
@@ -65,12 +76,12 @@ export function Home() {
                             Since I was a child, I've always lived on the
                             internet, I stayed up playing video games and
                             watching videos on youtube. This passion for visual
-                            things made me love the front end, I really enjoy
+                            things made me love the front end, I really like
                             watching animations made with Css and Javascript
                             (JS), drawings made entirely with Css and I try
                             every day to add this to my personal projects, they
                             are small details that I think they make a total
-                            difference when browsing the web
+                            difference when browsing the web.
                         </p>
                     </div>
                 </TechPart>
@@ -141,6 +152,10 @@ export function Home() {
                 <h2>My projects</h2>
                 <CustomSwiper></CustomSwiper>
             </SliderContainer>
+
+            <Contact />
+            
+            <Footer />
         </>
     );
 }

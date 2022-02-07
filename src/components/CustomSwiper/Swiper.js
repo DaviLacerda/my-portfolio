@@ -1,9 +1,11 @@
 // import swiper.js and styles
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFlip     } from "swiper";
+import { Pagination, EffectCards } from "swiper";
 import { SwiperContainer } from "./styles";
+
 import "swiper/css";
-import "swiper/css/effect-flip";
+import "swiper/css/pagination";
+import "swiper/css/effect-cards";
 
 // import axios and react hooks
 import axios from "axios";
@@ -37,9 +39,11 @@ export function CustomSwiper() {
     return (
         <SwiperContainer>
             <Swiper
-                effect={"flip"}
+                effect={"cards"}
                 grabCursor={true}
-                modules={[EffectFlip]}
+                modules={[Pagination, EffectCards]}
+                pagination={true}
+                centeredSlides={true}
             >
                 {repos.map((repository) => {
                     return (
