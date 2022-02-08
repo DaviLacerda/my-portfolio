@@ -28,13 +28,14 @@ export function App() {
     useEffect(() => {
         const localTheme = localStorage.theme;
         localTheme && setTheme(localTheme);
+
+        ScrollReveal().reveal("section", {
+            origin: "bottom",
+            delay: 600,
+            distance: "50px",
+        });
     }, []);
 
-    ScrollReveal().reveal("section", {
-        origin: "bottom",
-        delay: 600,
-        distance: "50px",
-    });
 
     return (
         <ThemeProvider theme={theme === "lightMode" ? lightMode : nightMode}>
