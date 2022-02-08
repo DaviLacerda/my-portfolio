@@ -1,5 +1,5 @@
 import { Switch } from "@mui/material";
 
 export function SwitchCustom({ onClick }) {
-    return <Switch color="primary" className="customSwitch" onClick={onClick} aria-label="Theme Switcher"/>;
+    return <Switch aria-label="Theme Switch" color="primary" className="customSwitch" onClick={onClick}/>;
 }

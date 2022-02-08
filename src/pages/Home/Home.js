@@ -102,7 +102,7 @@ export function Home() {
                         <LanguageImg src="https://v4.material-ui.com/static/logo.png" alt="Material UI (MUI)" />
 
                         {/* tailwind css */}
-                        <LanguageImg src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.png" alt="Tailwind CSS" />
+                        <LanguageImg src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" />
                         
                     </div>
                 </TechLanguages>

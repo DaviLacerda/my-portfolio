@@ -10,10 +10,8 @@ export const SwiperContainer = styled.div`
     .swiper {
         position:relative;
 
-        width: 90%;
+        width: 100%;
         height: 280px;
-
-        padding:8px;
 
         @media(min-width:900px){
             width:50%;
@@ -21,14 +19,16 @@ export const SwiperContainer = styled.div`
         }
     }
 
-    .swiper-cards{
-        width:440px;
-        height:140px;
-    }
-
     .swiper-slide{
         width:100%;
         height:100%;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        transition: filter .4s;
+        will-change:filter;
 
         a{
             color:inherit;
@@ -36,11 +36,15 @@ export const SwiperContainer = styled.div`
 
         img{
             width:100%;
-            height:100%;
+            max-width:400px;
 
-            min-width:128px;
-            min-height:128px;
+            height:100%;
+            max-height:150px;
         }
+    }
+
+    .swiper-slide:not(.swiper-slide-active){
+        filter:brightness(0.8);
     }
 
     .swiper-slide-shadow{
