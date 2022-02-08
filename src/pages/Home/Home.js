@@ -11,6 +11,7 @@ import {
     SliderContainer,
 } from "./styles";
 
+import { LanguageImg } from "../../components/LanguageImg/LanguageImg";
 import RoundedImage from "../../components/RoundedImage/RoundedImage";
 import { TypingEffect } from "../../components/TypingEffect/TypingEffect";
 import { CustomSwiper } from "../../components/CustomSwiper/Swiper";
@@ -18,18 +19,11 @@ import { CurveText } from "../../components/CurveText/CurveText";
 import { Contact } from "../../components/Contact/Contact";
 import { NeonBar } from "../../components/NeonBar/NeonBar";
 import { Footer } from "../../components/Footer/Footer";
-import ScrollReveal from "scrollreveal";
 
 // Import MUI Icons
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 export function Home() {
-    ScrollReveal().reveal("section", {
-        origin: "bottom",
-        delay: 600,
-        distance: "50px",
-    });
-
     return (
         <>
             <Presentation>
@@ -46,7 +40,7 @@ export function Home() {
                     />
                     <Circle />
                 </PresentationRight>
-                <a href="#tech" className="arrowDown">
+                <a href="#tech" aria-label="Go to section tech" className="arrowDown">
                     <ArrowDownwardIcon />
                 </a>
             </Presentation>
@@ -90,60 +84,26 @@ export function Home() {
                     <h2>Languages and Tools</h2>
                     <div className="icons">
                         {/* html5 */}
-                        <abbr title="HTML5">
-                            <img
-                                src="https://media2.giphy.com/media/XAxylRMCdpbEWUAvr8/giphy.gif?cid=790b7611f5b78cee6d0974fcfc7c0c723b1c600346853961&rid=giphy.gif&ct=s"
-                                alt="HyperText Markup Language (HTML)"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://media2.giphy.com/media/XAxylRMCdpbEWUAvr8/giphy.gif?cid=790b7611f5b78cee6d0974fcfc7c0c723b1c600346853961&rid=giphy.gif&ct=s" alt="HyperText Markup Language 5 (HTML5)" />
 
                         {/* css3 */}
-                        <abbr title="CSS3">
-                            <img
-                                src="https://media4.giphy.com/media/fsEaZldNC8A1PJ3mwp/giphy.gif"
-                                alt="Cascading Style Sheet (CSS)"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://media4.giphy.com/media/fsEaZldNC8A1PJ3mwp/giphy.gif" alt="Cascading Style Sheet 3 (CSS3)" />
 
                         {/* javascript */}
-                        <abbr title="JavaScript">
-                            <img
-                                src="https://cdn.hashnode.com/res/hashnode/image/upload/v1622432919395/OStnZ-nKh.gif?auto=format,compress&gif-q=60&format=webm"
-                                alt="JavaScript (JS)"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://cdn.hashnode.com/res/hashnode/image/upload/v1622432919395/OStnZ-nKh.gif?auto=format,compress&gif-q=60&format=webm" alt="JavaScript (JS)" />
 
                         {/* react */}
-                        <abbr title="ReactJS">
-                            <img
-                                src="https://i.giphy.com/media/eNAsjO55tPbgaor7ma/200w.webp"
-                                alt="React JavaScript (ReactJS)"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://i.giphy.com/media/eNAsjO55tPbgaor7ma/200w.webp" alt="React JavaScript (ReactJS)" />
 
                         {/* bootstrap */}
-                        <abbr title="Bootstrap">
-                            <img
-                                src="https://media4.giphy.com/media/Sr8xDpMwVKOHUWDVRD/giphy.gif?cid=790b761179b71102898d646d04e8de917c7cee968266ce9a&rid=giphy.gif&ct=s"
-                                alt="Bootstrap"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://media4.giphy.com/media/Sr8xDpMwVKOHUWDVRD/giphy.gif?cid=790b761179b71102898d646d04e8de917c7cee968266ce9a&rid=giphy.gif&ct=s" alt="Bootstrap" />
 
                         {/* material ui */}
-                        <abbr title="MaterialUI">
-                            <img
-                                src="https://v4.material-ui.com/static/logo.png"
-                                alt="Material UI (MUI)"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://v4.material-ui.com/static/logo.png" alt="Material UI (MUI)" />
 
                         {/* tailwind css */}
-                        <abbr title="Tailwind CSS">
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
-                                alt="Tailwind CSS"
-                            />
-                        </abbr>
+                        <LanguageImg src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.png" alt="Tailwind CSS" />
+                        
                     </div>
                 </TechLanguages>
             </Technologies>

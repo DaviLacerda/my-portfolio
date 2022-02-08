@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { nightMode, lightMode, GlobalStyles } from "./GlobalStyles";
 import { SwitchCustom } from "./components/SwitchCustom/SwitchCustom";
+import ScrollReveal from "scrollreveal";
 
 export function App() {
     if (!localStorage.theme) {
@@ -28,6 +29,12 @@ export function App() {
         const localTheme = localStorage.theme;
         localTheme && setTheme(localTheme);
     }, []);
+
+    ScrollReveal().reveal("section", {
+        origin: "bottom",
+        delay: 600,
+        distance: "50px",
+    });
 
     return (
         <ThemeProvider theme={theme === "lightMode" ? lightMode : nightMode}>

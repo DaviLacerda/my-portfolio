@@ -197,20 +197,6 @@ export const TechLanguages = styled.div`
         justify-content: center;
         flex-flow: row wrap;
 
-        img {
-            width: 48px;
-            height: auto;
-
-            min-width: 64px;
-            max-width: 128px;
-
-            object-fit: contain;
-
-            @media (min-width: 900px) {
-                width: 128px;
-            }
-        }
-
         @media (min-width: 600px) {
             width: 50%;
             flex-direction: row;

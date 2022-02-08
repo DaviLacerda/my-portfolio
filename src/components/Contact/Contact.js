@@ -1,14 +1,15 @@
-import { ContactContainer } from "./styles"
+import { ContactContainer } from "./styles";
 import { NeonBar } from "../NeonBar/NeonBar";
+import { IconLink } from "../IconLink/IconLink";
 
 // import social icons from mui/icons
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from '@mui/icons-material/GitHub';
+import GitHubIcon from "@mui/icons-material/GitHub";
 
-export function Contact(){
+export function Contact() {
     return (
         <ContactContainer>
             <div className="contact__left">
@@ -21,20 +22,35 @@ export function Contact(){
             </div>
             <div className="contact__right">
                 {/* Instagram */}
-                <a href="https://www.instagram.com/davi.frontend/" target='_blank'><InstagramIcon /></a>
+                <IconLink
+                    link="https://www.instagram.com/davi.frontend/"
+                    svg={<InstagramIcon />}
+                />
 
                 {/* WhatsApp */}
-                <a href="https://api.whatsapp.com/send?phone=5534992750234&text=Ol%C3%A1%20Davi%2C%20tudo%20bem%3F" target='_blank'><WhatsAppIcon /></a>
+                <IconLink
+                    link="https://api.whatsapp.com/send?phone=5534992750234&text=Ol%C3%A1%20Davi%2C%20tudo%20bem%3F"
+                    svg={<WhatsAppIcon />}
+                />
 
                 {/* LinkedIn */}
-                <a href="https://www.linkedin.com/in/davi16lacerda/" target='_blank'><LinkedInIcon /></a>
+                <IconLink
+                    link="https://www.linkedin.com/in/davi16lacerda/"
+                    svg={<LinkedInIcon />}
+                />
 
                 {/* Email */}
-                <a href="mailto:davi16lacerda@gmail.com?subject=Digite%20o%20assunto%20aqui" target='_blank'><EmailIcon /></a>
+                <IconLink
+                    link="mailto:davi16lacerda@gmail.com?subject=Digite%20o%20assunto%20aqui"
+                    svg={<EmailIcon />}
+                />
 
                 {/* GitHub */}
-                <a href="https://github.com/davilacerda" target='_blank'><GitHubIcon /></a>
+                <IconLink
+                    link="https://github.com/davilacerda"
+                    svg={<GitHubIcon />}
+                />
             </div>
         </ContactContainer>
-    )
+    );
 }

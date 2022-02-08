@@ -52,29 +52,5 @@ export const ContactContainer = styled.section`
         justify-content:center;
         flex-flow: row wrap;
         gap:8px;
-
-        a{
-            width:48px;
-            height:48px;
-            color:inherit;
-
-            padding:8px;
-
-            border-radius:50%;
-            transition: background-color .5s;
-
-            svg{
-                width:100%;
-                height:100%;
-
-                path{
-                    fill:${(props) => props.theme.color};
-                }
-            }
-
-            &:hover{
-                background-color:${(props) => props.theme.highlight};
-            }
-        }
     }
 `
