@@ -8,7 +8,7 @@ export const CustomIconLink = styled.a`
     padding:8px;
 
     border-radius:50%;
-    transition: background-color .5s;
+    transition: all .5s;
 
     svg{
         width:100%;
@@ -21,5 +21,9 @@ export const CustomIconLink = styled.a`
 
     &:hover, &:focus{
         background-color:${(props) => props.theme.highlight};
+    }
+
+    &:active{
+        transform:scale(0.9);
     }
 `;
