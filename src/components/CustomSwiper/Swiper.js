@@ -15,6 +15,9 @@ export function CustomSwiper() {
     const [repos, setRepos] = useState([]);
     const [colors, setColors] = useState([]);
 
+    const cardLightMode = ['8257E5','efeff4'];
+    const cardDarkMode = ['e5b657','0E0E10'];
+
     const getRepos = async () => {
         const res = await axios.get(
             "https://api.github.com/users/DaviLacerda/repos"
@@ -24,7 +27,7 @@ export function CustomSwiper() {
 
     const getCardColors = () => {
         const currentTheme = localStorage.theme;
-        currentTheme === 'lightMode' ? setColors(['e5b657','0E0E10']) : setColors(['8257E5','efeff4'])
+        currentTheme === 'lightMode' ? setColors(cardDarkMode) : setColors(cardLightMode)
     }
 
     useEffect(() => {
