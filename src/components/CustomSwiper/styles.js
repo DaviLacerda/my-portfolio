@@ -21,7 +21,15 @@ export const SwiperContainer = styled.div`
         }
     }
 
+    .swiper-cards{
+        width:440px;
+        height:140px;
+    }
+
     .swiper-slide{
+        width:100%;
+        height:100%;
+
         a{
             color:inherit;
         }
