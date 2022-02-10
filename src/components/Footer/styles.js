@@ -12,4 +12,9 @@ export const CustomFooter = styled.footer`
     padding:16px;
     
     background-color: ${(props) => props.theme.highlight};
+
+    a{
+        color:inherit;
+        text-decoration:none;
+    }
 `;
