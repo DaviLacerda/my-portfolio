@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-d
 
 // Import Pages
 import { Home } from "../pages/Home/Home";
+import { EasterEgg } from "../pages/EasterEgg/EasterEgg";
 
 function RoutesSite() {
     return(
@@ -9,6 +10,7 @@ function RoutesSite() {
             <Router>
                 <Routes>
                     <Route path='*' element={<Home/>}></Route>
+                    <Route path="easteregg" element={<EasterEgg />}></Route>
                 </Routes>
             </Router>
         </>
